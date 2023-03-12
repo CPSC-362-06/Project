@@ -1,0 +1,204 @@
+:root{
+    --bg-color: rgb(139, 196, 223);
+    --primary-color: white;
+    --secondary-color: gold;
+}
+
+body{
+	font-family: sans-serif; color: black;
+	background-color: var(--bg-color);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: gold;
+}
+
+form{
+    background-color: var(--bg-color);
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+}
+
+.form-container{
+	border-radius: 5px;
+	border: 1px solid;
+	padding-left: 10vh;
+	padding-right: 10vh;
+	-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+	box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+	max-height: 100vh;
+	max-width: 100vh;
+	min-width: 50vh;
+	min-height: 50vh;
+}
+#columna{
+	background-color: #fff;
+}
+#img-center{
+	background-position: top center;
+/*	background-image: url(img/OwlBackground.jpeg);*/
+	background-size: cover;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+}
+.btn1{
+	border: none;
+	outline: none;
+	height: 50px;
+	width: 100%;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
+.btn1:hover{
+	background: var(--primary-color);
+	border: 1px solid;
+	color: black;
+}
+
+
+/* --------------------------------
+ *              SWITCH     
+ * --------------------------------
+ */
+
+.switchBtn {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 11px;
+    margin-bottom: 1px;
+    margin-right: 4px;
+
+}
+.switchBtn input {display:none;}
+.slide {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCCCCC;
+    -webkit-transition: .4s;
+    transition: .4s;
+    padding: 6px;
+    color: #fff;
+}
+.slide:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: -2px;
+    bottom: -2.5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slide {
+    background-color: #CCCCCC;
+    padding-left: 0;
+}
+input:focus + .slide {
+    box-shadow: 0 0 1px white;
+}
+input:checked + .slide:before {
+    -webkit-transform: translateX(-19px);
+    -ms-transform: translateX(-19px);
+    transform: translateX(-19px);
+    left: 31px;
+    background-color: var(--secondary-color);
+}
+.slide.round {
+    border-radius: 34px;
+}
+.slide.round:before {
+    border-radius: 50%;
+}
+
+/* --------------------------------
+ *              RADIO     
+ * --------------------------------
+ */
+
+.radio{
+    font-size: 30px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.radio-input{
+    display: none;
+}
+
+.radio-radio{
+    position: relative;
+    width: 0.6em;
+    height: 0.6em;
+    border: 2px solid darkgray;
+    display: inline-block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-right: 8px;
+    top: -12px;
+}
+
+.radio-radio:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.radio-input:checked + .radio-radio::after{
+    opacity: 1;
+}
+
+
+/* --------------------------------
+ *              SUBMIT     
+ * --------------------------------
+ */
+
+.submit-button{
+    background-color: var(--bg-color);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: solid 2px black;
+    text-decoration: none;
+    transition: backround-color 0.3s;
+    font-size: 16px;
+}
+
+.submit-button:hover{
+    border: solid 2px var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+/* --------------------------------
+ *            ACCOUNT    
+ * --------------------------------
+ */
+
+.account{
+    color: var(--primary-color) !important;
+}
+
+.account:hover{
+    color: var(--secondary-color) !important;
+}
+
