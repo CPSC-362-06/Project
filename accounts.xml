@@ -1,0 +1,9 @@
+<?xml version = "1.0"? encoding="UTF-8">
+<UserList>
+<user1>
+	<name>Example User</name>
+	<cwid>12345678</cwid>
+	<email>Example@csu.fullerton.edu</email>
+	<password>test123</password>
+</user1>
+</UserList>
