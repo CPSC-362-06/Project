@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="./logIn.css" type="text/css" rel="stylesheet"> 
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <div class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">My School</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Discussions</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn btn-outline-primary ml-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Profile</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header section -->
+  <div class="jumbotron text-center mt-4">
+    <h1>Welcome to My CSUF</h1>
+    <p>View list of courses below</p>
+  </div>
+
+  <!-- Course list section -->
+  <div class="container">
+    <h2>Our Courses</h2>
+    <p>Click on a course to view more details.</p>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action">Mathematics</a>
+      <a href="#" class="list-group-item list-group-item-action">English</a>
+      <a href="#" class="list-group-item list-group-item-action">Science</a>
+      <a href="#" class="list-group-item list-group-item-action">History</a>
+    </div>
+  </div>
+
+  <!-- Offcanvas for user profile -->
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">User Profile</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Name: John Doe</p>
+      <p>Email: john.doe@example.com</p>
+      <p>Phone: 123-456-7890</p>
+    </div>
+  </div>
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
