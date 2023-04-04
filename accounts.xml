@@ -1,9 +1,15 @@
 <?xml version = "1.0"? encoding="UTF-8">
-<UserList>
-<user1>
-	<name>Example User</name>
+<user_list>
+<user>
+	<name>Example User1</name>
 	<cwid>12345678</cwid>
-	<email>Example@csu.fullerton.edu</email>
+	<email>Example1@csu.fullerton.edu</email>
 	<password>test123</password>
-</user1>
-</UserList>
+</user>
+<user>
+	<name>Example User2</name>
+	<cwid>87654321</cwid>
+	<email>Example2@csu.fullerton.edu</email>
+	<password>123test</password>
+</user>
+</user_list>

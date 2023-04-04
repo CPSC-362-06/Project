@@ -1,0 +1,11 @@
+<?xml version = "1.0"? encoding="UTF-8">
+<course_list>
+<course>
+	<name>Foundations of Software Engineering</name>
+	<id>CPSC 362</id>
+</course>
+<course>
+	<name>Compilers and Languages</name>
+	<id>CPSC 323</id>
+</course>
+</course_list>
