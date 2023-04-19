@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discussion Board Creator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      form {
+        margin-bottom: 30px;
+      }
+      label {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 10px;
+      }
+      #board {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create a Discussion Board</h1>
+      <form>
+        <div class="form-group">
+          <label for="board-name">Board Name:</label>
+          <input type="text" class="form-control" id="board-name" required>
+        </div>
+        <div class="form-group">
+          <label for="board-description">Board Description:</label>
+          <textarea class="form-control" id="board-description" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Board</button>
+      </form>
+      <div id="board"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $('form').submit(function(event) {
+        event.preventDefault();
+        var boardName = $('#board-name').val();
+        var boardDescription = $('#board-description').val();
+        var boardHtml = '<div class="card">' +
+                          '<div class="card-body">' +
+                            '<h5 class="card-title">' + boardName + '</h5>' +
+                            '<p class="card-text">' + boardDescription + '</p>' +
+                          '</div>' +
+                        '</div>';
+        $('#board').append(boardHtml);
+        $('form')[0].reset();
+      });
+    </script>
+  </body>
+</html>
