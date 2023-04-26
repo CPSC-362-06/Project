@@ -1,30 +1,21 @@
-// get the input field and the list of courses
 const input = document.querySelector('.form-control');
-const courses = document.querySelectorAll('.list-group-item');
 
 // add event listener to input field
 input.addEventListener('input', (event) => {
   const searchTerm = event.target.value.toLowerCase();
-  var resultsFound = false;
-
-  // iterate through the list of courses and hide those that don't match the search term
-  courses.forEach((course) => {
-    const courseName = course.textContent.toLowerCase();
-
-    if (courseName.includes(searchTerm)) {
-      course.style.display = 'block';
-      resultsFound = true;
-    } else {
-      course.style.display = 'none';
-    }
-
-    if (!resultsFound) {
-      document.getElementById("no-results-message").style.display = "block";
-    } else {
-      document.getElementById("no-results-message").style.display = "none";
-    }
-  });
+  filterCourses(searchTerm);
 });
+
+// Login
+function redirectToLoginPage() {
+  window.location.href = "./logIn.html";
+}
+
+// New Discussion Board
+function redirectToBoardPage() {
+  window.location.href = "./Landing_board.html";
+}
+
 
 // Add Course
 const courseList = document.querySelector("#course-list");
@@ -41,6 +32,7 @@ addCourseBtn.addEventListener("click", function() {
       alert("This course is already in the list!");
     } else {
       addCourse(newCourse);
+      filterCourses(searchInput.value.toLowerCase());
     }
   }
 });

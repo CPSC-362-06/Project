@@ -53,32 +53,131 @@
     <!-- List of courses -->
     <p>Click on a course to view more details.</p>
     <div class="list-group" id="course-list">
-      <a href="#" class="list-group-item list-group-item-action">Mathematics</a>
-      <a href="#" class="list-group-item list-group-item-action">English</a>
-      <a href="#" class="list-group-item list-group-item-action">Science</a>
-      <a href="#" class="list-group-item list-group-item-action">History</a>
+      <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#math-discussions">Mathematics</a>
+      <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#english-discussions">English</a>
+      <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#science-discussions">Science</a>
+      <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#history-discussions">History</a>
     </div>
     <div class="container" id="no-results-message" style="display:none;">
       <p>Sorry, no courses found.</p>
     </div>
     <p class="mt-4 text-center">A Course is missing? Don't worry add the missing course!</p>
     <div class="container d-flex justify-content-center">
-      <button type="button" class="btn btn-outline-primary" id="add-course-button">Add Course</button>
+      <button type="button" class="btn1 btn-outline-primary" id="add-course-button">Add Course</button>
     </div>
   </div>
 
   <!-- Offcanvas for user profile -->
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">User Profile</h5>
+      <h2 class="offcanvas-title justify-content-center" id="offcanvasWithBothOptionsLabel">User Profile</h2>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p>Name: John Doe</p>
-      <p>Email: john.doe@example.com</p>
-      <p>Phone: 123-456-7890</p>
+      <div class="offcanvas-body">
+        <button type="button" class="btn1 btn-primary mb-3" onclick="redirectToLoginPage()">Log In</button>
+        <p>Name: Guess</p>
+        <p>Email: Undefined</p>
+        <p>Phone: Undefined</p>
+      </div>
     </div>
   </div>
+
+  <!-- Modal for Mathematics -->
+  <div class="modal fade" id="math-discussions" tabindex="-1" aria-labelledby="math-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="math-modal-label">Mathematics Discussions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Join one of the following discussions:</p>
+          <div class="list-group" id="course-discussion-list">
+            <a href="#" class="list-group-item list-group-item-action">Algebra</a>
+            <a href="#" class="list-group-item list-group-item-action">Geometry</a>
+            <a href="#" class="list-group-item list-group-item-action">Calculus</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal" onclick="redirectToBoardPage()">Create New Discussion</button>
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for English -->
+  <div class="modal fade" id="english-discussions" tabindex="-1" aria-labelledby="english-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="english-modal-label">English Discussions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Join one of the following discussions:</p>
+          <div class="list-group" id="course-discussion-list">
+            <a href="#" class="list-group-item list-group-item-action">Literature</a>
+            <a href="#" class="list-group-item list-group-item-action">Creative Writing</a>
+            <a href="#" class="list-group-item list-group-item-action">Language Learning</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal" onclick="redirectToBoardPage()">Create New Discussion</button>
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Science -->
+  <div class="modal fade" id="science-discussions" tabindex="-1" aria-labelledby="science-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="science-modal-label">Science Discussions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Join one of the following discussions:</p>
+          <div class="list-group" id="course-discussion-list">
+            <a href="#" class="list-group-item list-group-item-action">Biology</a>
+            <a href="#" class="list-group-item list-group-item-action">Chemistry</a>
+            <a href="#" class="list-group-item list-group-item-action">Physics</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal" onclick="redirectToBoardPage()">Create New Discussion</button>
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for History -->
+  <div class="modal fade" id="history-discussions" tabindex="-1" aria-labelledby="science-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="science-modal-label">Science Discussions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Join one of the following discussions:</p>
+          <div class="list-group" id="course-discussion-list">
+            <a href="#" class="list-group-item list-group-item-action">American</a>
+            <a href="#" class="list-group-item list-group-item-action">World</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal" onclick="redirectToBoardPage()">Create New Discussion</button>
+          <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="./courseList.js" type="text/javascript"></script>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
