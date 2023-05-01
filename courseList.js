@@ -50,7 +50,7 @@ searchBtn.addEventListener("click", function() {
 // Function to add a new course to the list
 function addCourse(courseName) {
   const newCourseItem = document.createElement("a");
-  newCourseItem.href = "#";
+  newCourseItem.href = "./Landing_board.html";
   newCourseItem.className = "list-group-item list-group-item-action";
   newCourseItem.innerText = courseName;
   courseList.appendChild(newCourseItem);
@@ -95,3 +95,12 @@ function resetFilter() {
   }
   noResultsMsg.style.display = "none";
 }
+
+
+// MODAL DYNAMIC CREATION
+function initModal(modalId) {
+  var myModalEl = document.getElementById(modalId);
+  var modal = new bootstrap.Modal(myModalEl);
+}
+
+
