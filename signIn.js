@@ -1,8 +1,44 @@
+function addUser(name, cwid, email, password) {
+  // Load the XML file using XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "accounts.xml", false);
+  xhttp.send();
+  
+  // Parse the XML file using DOMParser
+  var xmlDoc = new DOMParser().parseFromString(xhttp.responseText, "text/xml");
+
+  // Create a new user element and its child elements
+  var newUser = xmlDoc.createElement("user");
+  var newName = xmlDoc.createElement("name");
+  var newCWID = xmlDoc.createElement("cwid");
+  var newEmail = xmlDoc.createElement("email");
+  var newPassword = xmlDoc.createElement("password");
+  newName.textContent = name;
+  newCWID.textContent = cwid;
+  newEmail.textContent = email;
+  newPassword.textContent = password;
+  newUser.appendChild(newName);
+  newUser.appendChild(newCWID);
+  newUser.appendChild(newEmail);
+  newUser.appendChild(newPassword);
+
+  // Append the new user element to the root element
+  xmlDoc.getElementsByTagName("user_list")[0].appendChild(newUser);
+
+  // Convert the updated XML data to a string
+  var updatedXML = new XMLSerializer().serializeToString(xmlDoc);
+
+  // Write the updated XML data back to the file
+  var fs = require('fs');
+  fs.writeFileSync('accounts.xml', updatedXML);
+}
+
+
 function submitForm() {
   // Get the form input fields
   var emailInput = document.getElementById("email");
   var nameInput = document.getElementById("name");
-  var idInput = document.getElementById("ciwd");
+  var idInput = document.getElementById("cwid");
   var passwordInput = document.getElementById("password");
   var confirmPasswordInput = document.getElementById("confirmPassword");
 
@@ -61,6 +97,9 @@ function submitForm() {
     });
     return false;
   } else {
+    // Add user to accounts.xml   
+    addUser(nameValue, idValue, emailValue, passwordPattern);
+
     // Reset the custom validity message and submit the form
     nameInput.setCustomValidity("");
     emailInput.setCustomValidity("");
